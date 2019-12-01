@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+
+    {% include _page/title.html %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ru" />
+	<meta name="description" content="Официальный сайт рок-группы &laquo;Fort Royal&raquo;: информация, тексты песен, музыка, фотографии, видео." />
+	<meta name="keywords" content="Fort Royal, Форт Роял, Форт Ройял, Не впускай зверя в дверь, рок-группа, Новосибирск, Олег Авдеев, Авдей, Эдуард Покровский, Эдик Покровский, Дмитрий Сердобинцев, Дима Сердобинцев, Андрей Глебов, Даниил Войтюк, Данила Войтюк, Павел Загорский, Паша Загорский, Вячеслав Фещенко, Слава Фещенко, Дмитрий Яцко, Дима Яцко, Форт Рояль, Форт-Роял, Форт-Ройял" />
+	<meta name="author" content="Evgeni Dmitriev (ThyBzi): thybzi@thybzi.com" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/screen.css" type="text/css" />
+
+</head>
+<body>
+
+<div id="wall-left"><div id="wall-right">
+
+<div id="top">
+
+<?php
+
+$eitems_group_id = 2;
+
+if (isset($EE["eitems"][$eitems_group_id]))
+{
+	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+	{
+		extract($module_data["output"]);
+		include $EE["theme"] . $module_data["name"] . ".tpl";
+	}
+}
+
+?>
+
+<a href="{{ site.baseurl }}/" title="На главную страницу сайта">
+	<img src="{{ site.baseurl }}/assets/images/top.jpg" alt="FORT ROYAL. Официальный сайт" />
+</a>
+
+</div>
+<div id="inter">
+
+	<div id="banner"><object type="application/x-shockwave-flash" data="/images/ad/banner2005.swf" width="468" height="60">
+		<param name="allowScriptAccess" value="sameDomain" />
+		<param name="movie" value="/images/ad/banner2005.swf" />
+		<param name="quality" value="high" />
+		<param name="bgcolor" value="#000000" />
+	</object></div>
+	<div id="citate">&laquo;<?php
+
+$eitems_group_id = 4;
+
+if (isset($EE["eitems"][$eitems_group_id]))
+{
+	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+	{
+		extract($module_data["output"]);
+		include $EE["theme"] . $module_data["name"] . ".tpl";
+	}
+}
+
+?>&raquo;</div>
+
+</div>
+<div id="content">
+
+<div id="content-<?php
+
+$two_columns = isset($EE["eitems"][8]);
+
+echo $two_columns ? "wide" : "full";
+
+?>-bottom">
+
+<h1><?php
+
+$eitems_group_id = 5;
+
+if (isset($EE["eitems"][$eitems_group_id]))
+{
+	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+	{
+		extract($module_data["output"]);
+		include $EE["theme"] . $module_data["name"] . ".tpl";
+	}
+}
+
+?></h1>
+<div class="content-left"><div class="content-right"><div class="content-inner">
+
+<?php
+
+$eitems_group_id = 1;
+
+if (isset($EE["eitems"][$eitems_group_id]))
+{
+	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+	{
+		extract($module_data["output"]);
+		include $EE["theme"] . $module_data["name"] . ".tpl";
+	}
+}
+
+?>
+
+<?php
+
+$eitems_group_id = 6;
+
+if (isset($EE["eitems"][$eitems_group_id]))
+{
+	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+	{
+		extract($module_data["output"]);
+		include $EE["theme"] . $module_data["name"] . ".tpl";
+	}
+}
+
+?>
+
+</div>
+
+</div></div></div>
+<?php
+
+if ($two_columns)
+{
+?>
+<div id="content-narrow-bottom">
+
+<h1><?php
+
+	$eitems_group_id = 7;
+
+	if (isset($EE["eitems"][$eitems_group_id]))
+	{
+		foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+		{
+			extract($module_data["output"]);
+			include $EE["theme"] . $module_data["name"] . ".tpl";
+		}
+	}
+
+?></h1>
+
+<div class="content-left"><div class="content-right"><div class="content-inner">
+
+<?php
+
+	$eitems_group_id = 8;
+
+	if (isset($EE["eitems"][$eitems_group_id]))
+	{
+		foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
+		{
+			extract($module_data["output"]);
+			include $EE["theme"] . $module_data["name"] . ".tpl";
+		}
+	}
+
+?>
+
+</div></div></div>
+<?php
+}
+
+?>
+
+</div>
+
+</div>
+
+<div class="pusher"></div>
+
+</div></div>
+
+</body>
+</html>

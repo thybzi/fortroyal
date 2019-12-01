@@ -1,0 +1,32 @@
+<a name="top"></a>
+<h2>Быстрый переход:</h2>
+
+{% assign albums = site.albums | sort:"year" %}
+
+<ul>
+{% for album in albums %}
+    <li><a href="#{{ album.slug }}">{{ album.title }}</a>{% if album.year %} ({{ album.year }}){% endif %}</li>
+{% endfor %}
+</ul>
+
+{% for album in albums %}
+{% assign songs = site.songs | where:"album",album.slug %}
+
+<a name="{{ album.slug }}"></a>
+<div class="block">
+
+<h2>{{ album.title }}{% if album.year %} ({{ album.year }}){% endif %}</h2>
+{% if album.cover %}<div class="cover"><img src="{{ album.cover }}" alt="Обложка" /></div>{% endif %}
+<ol>
+{% for song in songs %}
+    <li>{% if song.content %}<a href="{{ song.url }}" title="Смотреть текст песни">{% endif %}{{ song.title }}{% if song.content %}</a>{% endif %}</li>
+{% endfor %}
+</ol>
+
+<div class="small">{{ album.content }}</div>
+
+<p>(<a href="#top" title="Вернуться к началу страницы">наверх</a>)</p>
+
+<div class="pusher"></div>
+</div>
+{% endfor %}

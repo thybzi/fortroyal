@@ -1,0 +1,29 @@
+<?php
+
+if (isset($full_texts_uri))
+{
+	foreach ($news as $data)
+	{
+		echo "<h2>" . date("d.m.Y", strtotime($data->date)) . "</h2>\n";
+		echo "$data->text\n";
+
+		if ($data->full_text)
+		{
+			echo "<div>(<a href=\"{$module_data["output"]["full_texts_uri"]}#$data->id\" title=\"Читать подробнее\">подробнее&gt;&gt;</a>)</div>\n";
+		}
+	}
+
+	echo "<p><strong><a href=\"$full_texts_uri\" title=\"Просмотр архива новостей\">Архив новостей</a></strong></p>";
+}
+
+else
+{
+	foreach ($news as $data)
+	{
+		echo "<a name=\"$data->id\"></a>";
+		echo "<h2>" . date("d.m.Y", strtotime($data->date)) . "</h2>\n";
+		echo ($data->full_text ? $data->full_text : $data->text) . "\n";
+	}
+}
+
+?>
