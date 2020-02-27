@@ -3,7 +3,7 @@
     {% assign items = breadcrumbs_raw | split:"|" %}
     {% assign last_item_url = items | last | split:"~" | first %}
     {% if last_item_url == "/" %}
-        {% assign items = "/~Центр содействия семейному воспитанию «Сколковский»" %}
+        {% assign items = "/~Fort Royal" %}
     {% else %}
         {% assign items = items | reverse %}
     {% endif %}

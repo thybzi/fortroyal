@@ -9,6 +9,10 @@
 {% endfor %}
 </ul>
 
+---
+title: Музыка
+description: Альбомы, песни, тексты, mp3
+---
 {% for album in albums %}
 {% assign songs = site.songs | where:"album",album.slug %}
 

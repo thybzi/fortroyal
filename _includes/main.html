@@ -17,20 +17,7 @@
 
 <div id="top">
 
-<?php
-
-$eitems_group_id = 2;
-
-if (isset($EE["eitems"][$eitems_group_id]))
-{
-	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
-	{
-		extract($module_data["output"]);
-		include $EE["theme"] . $module_data["name"] . ".tpl";
-	}
-}
-
-?>
+{% include "menu.html" %}
 
 <a href="{{ site.baseurl }}/" title="На главную страницу сайта">
 	<img src="{{ site.baseurl }}/assets/images/top.jpg" alt="FORT ROYAL. Официальный сайт" />
@@ -39,26 +26,8 @@ if (isset($EE["eitems"][$eitems_group_id]))
 </div>
 <div id="inter">
 
-	<div id="banner"><object type="application/x-shockwave-flash" data="/images/ad/banner2005.swf" width="468" height="60">
-		<param name="allowScriptAccess" value="sameDomain" />
-		<param name="movie" value="/images/ad/banner2005.swf" />
-		<param name="quality" value="high" />
-		<param name="bgcolor" value="#000000" />
-	</object></div>
-	<div id="citate">&laquo;<?php
-
-$eitems_group_id = 4;
-
-if (isset($EE["eitems"][$eitems_group_id]))
-{
-	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
-	{
-		extract($module_data["output"]);
-		include $EE["theme"] . $module_data["name"] . ".tpl";
-	}
-}
-
-?>&raquo;</div>
+	<div id="banner">{% include "banner.html" %}</div>
+	<div id="citate">&laquo;{% include "quote.html" %}&raquo;</div>
 
 </div>
 <div id="content">
@@ -71,51 +40,10 @@ echo $two_columns ? "wide" : "full";
 
 ?>-bottom">
 
-<h1><?php
-
-$eitems_group_id = 5;
-
-if (isset($EE["eitems"][$eitems_group_id]))
-{
-	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
-	{
-		extract($module_data["output"]);
-		include $EE["theme"] . $module_data["name"] . ".tpl";
-	}
-}
-
-?></h1>
+<h1>{{ page.title }}</h1>
 <div class="content-left"><div class="content-right"><div class="content-inner">
 
-<?php
-
-$eitems_group_id = 1;
-
-if (isset($EE["eitems"][$eitems_group_id]))
-{
-	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
-	{
-		extract($module_data["output"]);
-		include $EE["theme"] . $module_data["name"] . ".tpl";
-	}
-}
-
-?>
-
-<?php
-
-$eitems_group_id = 6;
-
-if (isset($EE["eitems"][$eitems_group_id]))
-{
-	foreach ($EE["eitems"][$eitems_group_id] as $eitem_id => $module_data)
-	{
-		extract($module_data["output"]);
-		include $EE["theme"] . $module_data["name"] . ".tpl";
-	}
-}
-
-?>
+{{ content }}
 
 </div>
 
