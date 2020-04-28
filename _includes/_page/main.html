@@ -1,7 +1,11 @@
 {% capture devnull %}
     {% capture breadcrumbs_raw %}{% include _helpers/breadcrumbs.html %}{% endcapture %}
     {% assign breadcrumbs = breadcrumbs_raw | split:"|" %}
-    {% assign is_nested = breadcrumbs.size > 2 %}
+    {% if breadcrumbs.size > 2 %}
+        {% assign is_nested = true %}
+    {% else %}
+        {% assign is_nested = false %}
+    {% endif %}
 
     {% if page.page_title %}
         {% assign current_title = page.page_title %}

@@ -22,9 +22,28 @@ description: Альбомы, песни, тексты, mp3
 <h2>{{ album.title }}{% if album.year %} ({{ album.year }}){% endif %}</h2>
 {% if album.cover %}<div class="cover"><img src="{{site.baseurl}}/files/covers/{{ album.cover }}" alt="Обложка" /></div>{% endif %}
 <ol>
-{% for song_slug in album.songs %}
+{% for song_item in album.songs %}
+{% capture devnull %}
+    {% assign song_item_parts = song_item | split:"|" %}
+    {% assign song_slug = song_item_parts[0] %}
+    {% assign song_alt_title = song_item_parts[1] %}
+    {% assign song_alt_title = song_alt_title | strip %}
+    {% assign song_note = song_item_parts[2] %}
     {% assign song = site.songs | where:"slug",song_slug | first %}
-    <li>{% if song.content %}<a href="{{site.baseurl}}{{ song.url }}" title="Смотреть текст песни">{% endif %}{{ song.title }}{% if song.content %}</a>{% endif %}</li>
+    {% if song_alt_title.size > 0 %}
+        {% assign song_title = song_alt_title %}
+    {% else %}
+        {% assign song_title = song.title %}
+    {% endif %}
+    {% if song.content %}
+        {% capture link_open %}<a href="{{site.baseurl}}{{ song.url }}" title="Смотреть текст песни">{% endcapture %}
+        {% capture link_close %}</a>{% endcapture %}
+    {% else %}
+        {% assign link_open = "" %}
+        {% assign link_close = "" %}
+    {% endif %}
+{% endcapture %}
+    <li>{{ link_open }}{{ song_title }}{{ link_close }}{% if song_note %} {{ song_note }}{% endif %}</li>
 {% endfor %}
 </ol>
 
