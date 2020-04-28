@@ -1,4 +1,14 @@
 ---
 title: Группа &laquo;Fort Royal&raquo;. Официальный сайт
 description: Главная страница сайта
+page_title: Объявления и&nbsp;информация
+sidecol_title: Новости
+sidecol_content: news
 ---
+
+{% for item in site.announces %}
+
+<h2>{{ item.title }}</h2>
+{{ item.content }}
+
+{% endfor %}

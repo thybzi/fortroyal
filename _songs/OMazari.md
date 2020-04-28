@@ -1,4 +1,4 @@
 ---
-title: &hellip;О Мазари
+title: …О Мазари
 author: О. Авдеев
 ---

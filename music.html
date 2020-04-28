@@ -1,7 +1,12 @@
+---
+title: Музыка
+description: Альбомы, песни, тексты, mp3
+---
+
 <a name="top"></a>
 <h2>Быстрый переход:</h2>
 
-{% assign albums = site.albums | sort:"year" %}
+{% assign albums = site.albums | sort:"year" | reverse %}
 
 <ul>
 {% for album in albums %}
@@ -9,21 +14,17 @@
 {% endfor %}
 </ul>
 
----
-title: Музыка
-description: Альбомы, песни, тексты, mp3
----
 {% for album in albums %}
-{% assign songs = site.songs | where:"album",album.slug %}
 
 <a name="{{ album.slug }}"></a>
 <div class="block">
 
 <h2>{{ album.title }}{% if album.year %} ({{ album.year }}){% endif %}</h2>
-{% if album.cover %}<div class="cover"><img src="{{ album.cover }}" alt="Обложка" /></div>{% endif %}
+{% if album.cover %}<div class="cover"><img src="{{site.baseurl}}/files/covers/{{ album.cover }}" alt="Обложка" /></div>{% endif %}
 <ol>
-{% for song in songs %}
-    <li>{% if song.content %}<a href="{{ song.url }}" title="Смотреть текст песни">{% endif %}{{ song.title }}{% if song.content %}</a>{% endif %}</li>
+{% for song_slug in album.songs %}
+    {% assign song = site.songs | where:"slug",song_slug | first %}
+    <li>{% if song.content %}<a href="{{site.baseurl}}{{ song.url }}" title="Смотреть текст песни">{% endif %}{{ song.title }}{% if song.content %}</a>{% endif %}</li>
 {% endfor %}
 </ol>
 

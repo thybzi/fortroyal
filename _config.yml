@@ -1,12 +1,7 @@
 exclude: [Gemfile, Gemfile.lock]
-baseurl: ""
-future: true
-permalink: /news/:year-:month-:day-:slug/
+baseurl: "/new"
 excerpt_separator: <!--more-->
-paginate: 10
-paginate_path: "/news/page:num/"
 root_breadcrumb: "/~Fort Royal"
-plugins: [jekyll-paginate]
 
 collections:
   albums:
@@ -15,10 +10,12 @@ collections:
     output: false
   concerts:
     output: true
-    permalink: /concerts/:path/
+    permalink: /concerts/:path.html
+  news:
+    output: false
   songs:
     output: true
-    permalink: /music/:path/
+    permalink: /music/:path.html
 
 defaults:
   -
@@ -28,19 +25,13 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "concerts"
-      type: pages
+      path: ""
+      type: concerts
     values:
       section_breadcrumb: "/concerts/~Концерты"
   -
     scope:
-      path: "music"
-      type: pages
+      path: ""
+      type: songs
     values:
       section_breadcrumb: "/music/~Музыка"
-  -
-    scope:
-      path: ""
-      type: posts
-    values:
-      section_breadcrumb: "/news/~Новости"

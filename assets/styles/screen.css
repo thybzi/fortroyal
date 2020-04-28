@@ -1,293 +1,355 @@
 /* Main styles */
 
 html
-{	font-size: 100.01%;}
+{
+    font-size: 100.01%;
+}
 
 body
-{	width: 1000px;
-	margin: 0 auto;
-	background-color: #555;
-	color: #CDCDCD;
-	font: 82% Tahoma, Arial, Helvetica, sans-serif;}
+{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #555;
+    color: #CDCDCD;
+    font: 82% Tahoma, Arial, Helvetica, sans-serif;
+}
 
 h1, h2, h3
 {
-	margin: 1.15em 0 0.4em;
-	color: #564C48;
-	font: normal 170% Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
+    margin: 1.15em 0 0.4em;
+    color: #564C48;
+    font: normal 170% Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
 }
 
 h1
-{	text-transform: uppercase;}
+{
+    text-transform: uppercase;
+}
 
 h2, h3
-{	color: #907E78;	font-size: 140%;}
+{
+    color: #907E78;
+    font-size: 140%;
+}
 
 h3
-{	color: #B2A4A0;	font-size: 116%;}
+{
+    color: #B2A4A0;
+    font-size: 116%;
+}
 
 h1 small, h2 small, h3 small
 {
-	color: #D5D2CD;
-	font-size: 87%;
+    color: #D5D2CD;
+    font-size: 87%;
 }
 
 p
 {
-	margin: 0.6em 0;
+    margin: 0.6em 0;
 }
 
 a
 {
-	color: #CDCDCD;
-	cursor: pointer;
+    color: #CDCDCD;
+    cursor: pointer;
 }
 
 a:hover
 {
-	color: #FFF;
+    color: #FFF;
 }
 
 img
 {
-	border-width: 0;
+    border-width: 0;
 }
 
 
 /* Custom styles */
 
 .block
-{	margin: 0.5em 0;	padding: 0 1em 0.5em;
-	border: 1px solid #6B5D59;
-	background-color: #111;}
+{
+    margin: 0.5em 0;
+    padding: 0 1em 0.5em;
+    border: 1px solid #6B5D59;
+    background-color: #111;
+}
 
 img.float-left
-{	float: left;
-	margin: 0 0.5em 0.5em 0;
-	border: 1px solid #868686;}
+{
+    float: left;
+    margin: 0 0.5em 0.5em 0;
+    border: 1px solid #868686;
+}
 
 img.float-right
 {
-	float: right;
-	margin: 0 0 0.5em 0.5em;
-	border: 1px solid #6B5D59;
+    float: right;
+    margin: 0 0 0.5em 0.5em;
+    border: 1px solid #6B5D59;
 }
 
 .pusher
 {
-	clear: both;
+    clear: both;
 }
 
 .small
 {
-	color: #868686;
-	font-size: 95%;
+    color: #868686;
+    font-size: 95%;
 }
 
 .cover
-{	float: right;
-	width: 250px;
-	margin: 0 0 0.5em 0.5em;
-	text-align: center;}
+{
+    float: right;
+    width: 250px;
+    margin: 0 0 0.5em 0.5em;
+    text-align: center;
+}
 
 .cover img
-{	border: 1px solid #6B5D59;}
+{
+    border: 1px solid #6B5D59;
+}
 
 
 /* Layout styles */
 
 #wall-left
 {
-	padding-left: 61px;	background: #000 url(/themes/images/wall-left.jpg) 0 0 repeat-y;}
+    padding-left: 61px;
+    background: #000 url(../images/wall-left.jpg) 0 0 repeat-y;
+}
 
 #wall-right
 {
-	padding-right: 61px;
-	background: url(/themes/images/wall-right.jpg) 100% 0 repeat-y;
+    padding-right: 61px;
+    background: url(../images/wall-right.jpg) 100% 0 repeat-y;
 }
 
 #top
-{	height: 264px;
-	text-align: center;
+{
+    height: 264px;
+    text-align: center;
 }
 
 #top img
 {
-	margin-top: 27px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 598px;
+    margin-left: -302px;
 }
 
 #menu-left, #menu-right
 {
-	width: 178px;
-	height: 194px;	margin: 28px 0 0;
-	padding: 0;
-	cursor: default;}
+    width: 178px;
+    height: 194px;
+    margin: 28px 0 0;
+    padding: 0;
+    cursor: default;
+}
 
 #menu-left li, #menu-right li
-{	list-style-type: none;
-	margin: 0;
-	font: 18px Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
-	color: #D5D2CD;
+{
+    list-style-type: none;
+    margin: 0;
+    font: 18px Impact, "Arial Narrow", Arial, Helvetica, sans-serif;
+    color: #D5D2CD;
 }
 
 #menu-left a, #menu-right a
 {
-	color: #868686;
-	text-decoration: none;
+    color: #868686;
+    text-decoration: none;
 }
 
 #menu-left a:hover, #menu-right a:hover
-{	color: #907E78;
+{
+    color: #907E78;
 }
 
 #menu-left
-{	float: left;
-	text-align: left;
-	background: url(/themes/images/menu-left.jpg) 0 4px no-repeat;}
+{
+    float: left;
+    text-align: left;
+    background: url(../images/menu-left.jpg) 0 4px no-repeat;
+}
 
 #menu-right
 {
-	float: right;
-	text-align: right;
-	background: url(/themes/images/menu-right.jpg) 0 8px no-repeat;
+    float: right;
+    text-align: right;
+    background: url(../images/menu-right.jpg) 0 8px no-repeat;
 }
 
 #menu-right li
 {
-	padding-left: 0;
+    padding-left: 0;
 }
 
 #menu-item-01
-{	height: 44px;	padding-left: 43px;}
+{
+    height: 44px;
+    padding-left: 43px;
+}
 
 #menu-item-02
-{	height: 41px;
-	padding-left: 68px;
+{
+    height: 41px;
+    padding-left: 68px;
 }
 
 #menu-item-03
-{	height: 37px;
-	padding-left: 34px;
+{
+    height: 37px;
+    padding-left: 34px;
 }
 
 #menu-item-04
-{	height: 43px;
-	padding-left: 65px;
+{
+    height: 43px;
+    padding-left: 65px;
 }
 
 #menu-item-05
 {
-	padding-left: 44px;
+    padding-left: 44px;
 }
 
 #menu-item-06
 {
-	height: 43px;
-	padding-right: 44px;
+    height: 43px;
+    padding-right: 44px;
 }
 
 #menu-item-07
 {
-	height: 44px;
-	padding-right: 47px;
+    height: 44px;
+    padding-right: 47px;
 }
 
 #menu-item-08
 {
-	height: 37px;
-	padding-right: 63px;
+    height: 37px;
+    padding-right: 63px;
 }
 
 #menu-item-09
 {
-	height: 43px;
-	padding-right: 41px;
+    height: 43px;
+    padding-right: 41px;
 }
 
 #menu-item-10
 {
-	padding-right: 60px;
+    padding-right: 60px;
 }
 
 #inter
-{	height: 124px;}
+{
+    height: 124px;
+}
 
 #banner
 {
-	float: left;
-	width: 527px;	height: 90px;
-	padding: 34px 0 0 79px;
-	background: url(/themes/images/banner-background.jpg) 25px 50% no-repeat;}
+    float: left;
+    width: 527px;
+    height: 90px;
+    padding: 34px 0 0 79px;
+    background: url(../images/banner-background.jpg) 25px 50% no-repeat;
+}
 
 #citate
-{	float: right;
-	width: 144px;
-	height: 90px;
-	margin: 0 17px 0 -10px;
-	padding: 34px 21px 0 50px;
-	background: url(/themes/images/citate-background.jpg) 0 50% no-repeat;
-	color: #817B73;
-	font-size: 12px;
-	vertical-align: middle;}
+{
+    float: right;
+    width: 144px;
+    height: 90px;
+    margin: 0 17px 0 -10px;
+    padding: 34px 21px 0 50px;
+    background: url(../images/citate-background.jpg) 0 50% no-repeat;
+    color: #817B73;
+    font-size: 12px;
+    vertical-align: middle;
+}
 
 #citate a
-{	color: #817B73;
-	text-decoration: none;
+{
+    color: #817B73;
+    text-decoration: none;
 }
 
 #citate a:hover
 {
-	color: #D5D2CD;
+    color: #D5D2CD;
 }
 
 #content-full-bottom, #content-wide-bottom, #content-narrow-bottom
-{	float: right;	width: 254px;	padding: 20px 0 61px;
-	background: url(/themes/images/content-bottom.gif) 0 100% repeat-x;}
+{
+    float: right;
+    width: 254px;
+    padding: 20px 0 61px;
+    background: url(../images/content-bottom.gif) 0 100% repeat-x;
+}
 
 #content-full-bottom, #content-wide-bottom
-{	float: left;	width: 620px;
-	padding-left: 4px;
-	background-position: 4px 100%;}
+{
+    float: left;
+    width: 620px;
+    padding-left: 4px;
+    background-position: 4px 100%;
+}
 
 #content-full-bottom
-{	float: none;
-	width: auto;}
+{
+    float: none;
+    width: auto;
+}
 
 #content h1
-{	height: 34px;	margin: 0;
-	padding: 12px 0 0 80px;
-	background: url(/themes/images/content-top.gif) 0 100% no-repeat;	font-size: 22px;
-	cursor: default;
+{
+    height: 34px;
+    margin: 0;
+    padding: 12px 0 0 80px;
+    background: url(../images/content-top.gif) 0 100% no-repeat;
+    font-size: 22px;
+    cursor: default;
 }
 
 .content-left
 {
-	padding-left: 26px;
-	background: url(/themes/images/content-left.gif) 0 0 repeat-y;
+    padding-left: 26px;
+    background: url(../images/content-left.gif) 0 0 repeat-y;
 }
 
 .content-right
 {
-	padding-right: 26px;
-	background: url(/themes/images/content-right.gif) 100% 0 repeat-y;
+    padding-right: 26px;
+    background: url(../images/content-right.gif) 100% 0 repeat-y;
 }
 
 .content-inner
-{	padding: 0.6em 1.6em 1.2em;
-	border: 3px solid #2F2822;
-	border-bottom-width: 4px;
+{
+    padding: 0.6em 1.6em 1.2em;
+    border: 3px solid #2F2822;
+    border-bottom-width: 4px;
 }
 
 #content-narrow-bottom .content-inner
-{	color: #868686;
-	font-size: 95%;}
+{
+    color: #868686;
+    font-size: 95%;
+}
 
 #content-narrow-bottom .content-inner a
 {
-	color: #868686;
+    color: #868686;
 }
 
 #content-narrow-bottom .content-inner a:hover
 {
-	color: #D5D2CD;
+    color: #D5D2CD;
 }

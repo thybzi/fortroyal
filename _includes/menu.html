@@ -1,4 +1,4 @@
-{% assign divide_at = site.data.menu | divided_by:2 | floor | plus:1 %}
+{% assign divide_at = site.data.menu.size | divided_by:2 | floor | plus:1 %}
 <ul id="menu-left">
 {% for item in site.data.menu %}
 {% if forloop.index == divide_at %}
