@@ -163,6 +163,7 @@ img.float-right
 
 #menu-left a, #menu-right a
 {
+    position: relative;
     color: #868686;
     text-decoration: none;
 }
@@ -269,11 +270,25 @@ img.float-right
     width: 144px;
     height: 90px;
     margin: 0 17px 0 -10px;
-    padding: 34px 21px 0 50px;
+    padding: 17px 21px 17px 50px;
     background: url(../images/citate-background.jpg) 0 50% no-repeat;
     color: #817B73;
     font-size: 12px;
+    white-space: nowrap;
+}
+
+#citate::before {
+    content: '';
+    display: inline-block;
+    height: 90px;
     vertical-align: middle;
+}
+
+#citate q {
+    quotes: '\00ab' '\00bb';
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
 }
 
 #citate a

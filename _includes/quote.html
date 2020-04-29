@@ -1,0 +1,16 @@
+{% assign songs_with_quotes = site.songs | where_exp:"item","item.quote" %}
+<q id="citate-content"></q>
+<script>
+    (function () {
+        var itemList = [
+{% for item in songs_with_quotes %}
+            ['{{ item.quote }}', '{{ item.url }}']{% unless forloop.last %},{% endunless %}
+{% endfor %}
+        ];
+        var item = itemList[Math.floor(Math.random() * itemList.length)];
+        var linkElem = document.createElement('a');
+        linkElem.innerHTML = item[0];
+        linkElem.href = '{{ site.baseurl }}' + item[1] + '#main';
+        document.getElementById('citate-content').appendChild(linkElem);
+    })();
+</script>

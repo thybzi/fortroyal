@@ -17,17 +17,17 @@
 
 <div id="top">
 
-{% include menu.html %}
-
 <a href="{{ site.baseurl }}/" title="На главную страницу сайта">
     <img src="{{ site.baseurl }}/assets/images/top.jpg" alt="FORT ROYAL. Официальный сайт" />
 </a>
+
+{% include menu.html %}
 
 </div>
 <div id="inter">
 
     <div id="banner">{% include banner.html %}</div>
-    <div id="citate">&laquo;{% include quote.html %}&raquo;</div>
+    <div id="citate">{% include quote.html %}</div>
 
 </div>
 <div id="content">

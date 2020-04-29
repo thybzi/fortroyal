@@ -6,7 +6,8 @@ sidecol_title: Новости
 sidecol_content: news
 ---
 
-{% for item in site.announces %}
+{% assign announces = site.announces | where_exp:"item","item.active" | sort:"order" %}
+{% for item in announces %}
 
 <h2>{{ item.title }}</h2>
 {{ item.content }}

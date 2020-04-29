@@ -9,8 +9,7 @@ collections:
   announces:
     output: false
   concerts:
-    output: true
-    permalink: /concerts/:path.html
+    output: false
   news:
     output: false
   songs:
@@ -23,12 +22,6 @@ defaults:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
-      path: ""
-      type: concerts
-    values:
-      section_breadcrumb: "/concerts/~Концерты"
   -
     scope:
       path: ""
