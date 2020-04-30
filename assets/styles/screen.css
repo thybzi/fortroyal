@@ -131,17 +131,23 @@ img.float-right
 
 #top
 {
+    position: relative;
     height: 264px;
+    background: url(../images/header-bg.jpg) 50% 100% no-repeat;
+}
+
+#logo
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -18px;
     text-align: center;
 }
 
-#top img
+#logo img
 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 598px;
-    margin-left: -302px;
+    margin: 0 auto;
 }
 
 #menu-left, #menu-right
@@ -177,14 +183,12 @@ img.float-right
 {
     float: left;
     text-align: left;
-    background: url(../images/menu-left.jpg) 0 4px no-repeat;
 }
 
 #menu-right
 {
     float: right;
     text-align: right;
-    background: url(../images/menu-right.jpg) 0 8px no-repeat;
 }
 
 #menu-right li
