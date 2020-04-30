@@ -1,5 +1,5 @@
 {% assign news = site.news | sort:"date" | reverse %}
-{% for item in news %}
+{% for item in news limit:4 %}
 <a name="{{ item.slug }}"></a>
 <h2>{{ item.date | date: "%d.%m.%Y" }}</h2>
 {{ item.content }}
