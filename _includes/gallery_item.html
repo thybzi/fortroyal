@@ -1,0 +1,32 @@
+{% capture devnull %}
+
+{% assign image = nil %}
+{% assign thumb = nil %}
+{% assign caption = nil %}
+
+{% assign url_prefix = site.baseurl | append:"/" %}
+{% assign image = include.image | prepend:url_prefix %}
+
+{% assign thumb_strlen = include.thumb | size %}
+{% if thumb_strlen > 0 %}
+    {% assign thumb = include.thumb | prepend:url_prefix %}
+{% else %}
+    {% assign thumb = image | replace:".jpg","_tn.jpg" %}
+{% endif %}
+
+{% assign caption = include.caption %}
+{% assign caption_strlen = caption | size %}
+{% unless caption_strlen > 0 %}
+    {% assign caption = image | split:"." | first | split:"/" | last %}
+{% endunless %}
+
+{% endcapture %}{% assign devnull = nil %}
+
+<div class="gallery-item-wrapper">
+    <a title="Увеличить изображение" onclick="return hs.expand(this)" href="{{ image }}">
+        <img src="{{ thumb }}" alt="{{ caption }}" />
+    </a>
+{% if caption_strlen > 0 %}
+    <small>{{ caption }}</small>
+{% endif %}
+</div>

@@ -10,6 +10,22 @@
     <meta name="author" content="Evgeni Dmitriev (ThyBzi): thybzi@thybzi.com" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/screen.css" type="text/css" />
 
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/scripts/highslide/highslide.js"></script>
+    <script type="text/javascript">
+        hs.graphicsDir = '{{ site.baseurl }}/assets/scripts/highslide/graphics/';
+        hs.showCredits = false;
+        hs.fullExpandTitle = 'Полный размер';
+        hs.restoreTitle = 'Щелчок мышью закрывает изображение, клавиши-стрелки используются для перехода к предыдущему и следующему изображению';
+        hs.loadingText = 'Загрузка&hellip;';
+        hs.loadingTitle = 'Щёлкните мышью для отмены';
+        hs.allowMultipleInstances = false;
+        hs.registerOverlay({
+            overlayId: 'closebutton',
+            position: 'top right',
+            fade: 2 // fading the semi-transparent overlay looks bad in IE
+        });
+    </script>
+
 </head>
 <body>
 

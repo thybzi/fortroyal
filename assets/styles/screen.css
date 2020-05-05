@@ -372,3 +372,28 @@ img.float-right
 {
     color: #D5D2CD;
 }
+
+.gallery-wrapper
+{
+    padding: 1em 0;
+}
+
+.gallery-item-wrapper
+{
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 82px;
+}
+
+.gallery-item-wrapper img
+{
+    border: 1px solid #868686;
+}
+
+
+a.highslide-loading
+{
+    padding: 10px 10px 10px 30px;
+    background: #FFF url(../scripts/highslide/graphics/loader.white.gif) 10px 50% no-repeat;
+    color: #000;
+}

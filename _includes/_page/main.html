@@ -18,6 +18,10 @@
         {% assign parent_url = breadcrumbs[parent_level] | split:"~" | first %}
         {% assign page_title = breadcrumbs[parent_level] | split:"~" | last %}
         {% assign page_subtitle = current_title %}
+        {% if page.date %}
+            {% assign date = page.date | date:"%d.%m.%Y" %}
+            {% assign page_subtitle = page_subtitle | replace:"%DATE%",date %}
+        {% endif %}
     {% else %}
         {% assign page_title = current_title %}
     {% endif %}
@@ -38,6 +42,10 @@
 {% if page.author %}<p><strong>{{ page.author }}</strong></p>{% endif %}
 
 {{ page_content }}
+
+{% if page.images %}
+{% include gallery.html images=page.images %}
+{% endif %}
 
 {% if is_nested %}
 <p>(<a href="{{ site.baseurl }}{{ parent_url }}" onclick="history.back(); return false" title="Вернуться к предыдущей странице">назад</a>)</p>
