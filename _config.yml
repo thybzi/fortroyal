@@ -16,8 +16,9 @@ collections:
     output: true
     permalink: /music/:path.html
   photosets:
-    output: true
-    permalink: /photo/:path.html
+    output: false
+    # output: true
+    # permalink: /photo/:path.html
 
 defaults:
   -

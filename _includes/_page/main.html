@@ -44,7 +44,8 @@
 {{ page_content }}
 
 {% if page.images %}
-{% include gallery.html images=page.images %}
+{% assign subdir = page.path | split:"/" | last | split:"." | first %}
+{% include gallery.html images=page.images subdir=subdir %}
 {% endif %}
 
 {% if is_nested %}
