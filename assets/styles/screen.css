@@ -357,6 +357,10 @@ img.float-right
     border-bottom-width: 4px;
 }
 
+.content-inner .icon {
+    vertical-align: middle;
+}
+
 #content-narrow-bottom .content-inner
 {
     color: #868686;
