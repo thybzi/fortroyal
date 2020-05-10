@@ -281,15 +281,15 @@ img.float-right
     white-space: nowrap;
 }
 
-#citate::before {
-    content: '';
+#citate:before {
+    content: "";
     display: inline-block;
     height: 90px;
     vertical-align: middle;
 }
 
 #citate q {
-    quotes: '\00ab' '\00bb';
+    quotes: "\00ab" "\00bb";
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
