@@ -1,5 +1,4 @@
 exclude: [Gemfile, Gemfile.lock]
-baseurl: "/new"
 excerpt_separator: <!--more-->
 root_breadcrumb: "/~Fort Royal"
 
