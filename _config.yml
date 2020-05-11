@@ -1,0 +1,39 @@
+exclude: [Gemfile, Gemfile.lock]
+excerpt_separator: <!--more-->
+root_breadcrumb: "/~Fort Royal"
+
+collections:
+  albums:
+    output: false
+  announces:
+    output: false
+  concerts:
+    output: false
+  news:
+    output: false
+  songs:
+    output: true
+    permalink: /music/:path.html
+  photosets:
+    output: false
+    # output: true
+    # permalink: /photo/:path.html
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: songs
+    values:
+      section_breadcrumb: "/music/~Музыка"
+  -
+    scope:
+      path: ""
+      type: photosets
+    values:
+      section_breadcrumb: "/photo/~Фото"

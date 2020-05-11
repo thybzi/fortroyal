@@ -1,0 +1,19 @@
+---
+title: Фотографии
+description: Фотографии с концертов группы и из архивов
+---
+
+{% assign photosets_sorted = site.photosets | sort:"date" %}
+{% for photoset in photosets_sorted %}
+{% capture devnull %}
+    {% assign subdir = photoset.path | split:"/" | last | split:"." | first %}
+    {% assign title = photoset.title %}
+    {% if photoset.date %}
+        {% assign date = photoset.date | date:"%d.%m.%Y" %}
+        {% assign title = title | replace:"%DATE%",date %}
+    {% endif %}
+{% endcapture %}{% assign devnull = nil %}
+<h2>{{ title }}</h2>
+{{ photoset.content }}
+{% include gallery.html images=photoset.images subdir=subdir %}
+{% endfor %}

@@ -1,0 +1,12 @@
+---
+title: Новости
+description: Наши новости
+page_title: Архив новостей
+---
+
+{% assign news = site.news | sort:"date" | reverse %}
+{% for item in news %}
+<a name="{{ item.slug }}"></a>
+<h2>{{ item.date | date: "%d.%m.%Y" }}</h2>
+{{ item.content }}
+{% endfor %}

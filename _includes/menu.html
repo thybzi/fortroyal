@@ -1,0 +1,16 @@
+{% assign divide_at = site.data.menu.size | divided_by:2 | floor | plus:1 %}
+<ul id="menu-left">
+{% for item in site.data.menu %}
+{% if forloop.index == divide_at %}
+</ul>
+<ul id="menu-right">
+{% endif %}
+{% assign item_id = forloop.index %}
+{% if item_id < 10 %}
+    {% assign item_id = item_id | prepend:"0" %}
+{% endif %}
+    <li id="menu-item-{{ item_id }}">
+        <a href="{{ site.baseurl }}{{ item[1] }}" title="{{ item[2] }}">{{ item[0] }}</a>
+    </li>
+{% endfor %}
+</ul>

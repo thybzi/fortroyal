@@ -1,0 +1,15 @@
+---
+title: Группа &laquo;Fort Royal&raquo;. Официальный сайт
+description: Главная страница сайта
+page_title: Объявления и&nbsp;информация
+sidecol_title: Новости
+sidecol_content: news
+---
+
+{% assign announces = site.announces | where_exp:"item","item.active" | sort:"order" %}
+{% for item in announces %}
+
+<h2>{{ item.title }}</h2>
+{{ item.content }}
+
+{% endfor %}

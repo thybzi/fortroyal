@@ -1,0 +1,16 @@
+<div class="gallery-wrapper">
+{% for item in include.images %}
+    {% capture devnull %}
+        {% assign data = item | split:"|" %}
+        {% assign image = data[0] | strip | prepend:"/" | prepend:include.subdir | prepend:"files/photo/"  %}
+        {% assign thumb = data[1] | strip %}
+        {% assign caption = data[2] | strip %}
+        {% assign thumb_strlen = thumb | size %}
+        {% if thumb_strlen > 0 %}
+            {% assign thumb = thumb | prepend:"/" | prepend:include.subdir | prepend:"files/photo/" %}
+        {% endif %}
+    {% endcapture %}{% assign devnull = nil %}
+    {% include gallery_item.html image=image thumb=thumb caption=caption %}
+{% endfor %}
+    <div class="pusher"></div>
+</div>
