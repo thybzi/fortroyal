@@ -28,6 +28,12 @@ defaults:
   -
     scope:
       path: ""
+      type: "pages"
+    values:
+      permalink: "/:path/:basename/"
+  -
+    scope:
+      path: ""
       type: songs
     values:
       section_breadcrumb: "/music/~Музыка"
