@@ -35,7 +35,8 @@ description: Альбомы, песни, тексты, mp3
     {% else %}
         {% assign song_title = song.title %}
     {% endif %}
-    {% if song.content %}
+    {% assign text = song.content | strip %}
+    {% if text.size > 0 %}
         {% capture link_open %}<a href="{{site.baseurl}}{{ song.url }}" title="Смотреть текст песни">{% endcapture %}
         {% capture link_close %}</a>{% endcapture %}
     {% else %}
